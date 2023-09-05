@@ -1,0 +1,47 @@
+﻿@page
+
+@model MVCore.Views.HelloWorld.IndexModel
+@{
+
+}
+
+<br />
+<h2>List of Students</h2>
+
+<a class='btn btn-primary btn-sm' href="/Students/Create">New Student</a>
+
+<table class="table">
+    
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>FisrtName</th>
+            <th>LastName</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Created</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+  <!----> <tbody>
+        
+
+        @foreach (var item in Model.listofstudents)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Id</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Gender</td>
+                <td>@item.Address</td>
+                <td>@item.created_at</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/HelloWorld/Edit?Id=@item.Id">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/HelloWorld/Delete?Id=@item.Id">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
